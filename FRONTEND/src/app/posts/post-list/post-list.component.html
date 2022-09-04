@@ -1,0 +1,81 @@
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div *ngIf="isloading" style="text-align: center;" class="loading-text">
+        <app-spinner></app-spinner>
+     </div>
+     <div class="row">
+    <div style="    width: 50%;
+    margin: 0 auto;
+    justify-content: center;" class="loading-text">
+    <div> <h1 class="">Tell Your Story to the World</h1>           
+      <img src="assets/asset-1.png" alt="Image"></div> 
+     
+   <div class="search-bar">
+    <input type="search" class="form-control" [placeholder]="'Search'" name="search"
+    [(ngModel)]="searchText" autocomplete="off" ></div>
+   </div>   
+    
+     
+      <div class="card-body">
+        <div class="jobs">
+          <div class="jobs-card">
+            <div class="job" *ngFor="let post of posts | searchFilter:searchText ;let i =index "  [ngStyle]="{'border-color':post.upvote > post.downvote ?  'green': 'white'}">
+              <div class="job-header">
+                <a [routerLink]="[post.id]" > <p>{{ post.title }}</p> </a>
+                  <span class='deleteicon' (click)='deletePost(post)' title="Delete post"> &times;</span>
+              </div>
+              <div class=" contente">
+                <p>{{post.content |slice:0: 170 }}
+                  <a [routerLink]="[post.id]">{{post.content.length > 170 ? '...Read More' : ''}}</a></p>
+              </div>
+              <div class="job-footer">
+                  <span class="text-black-opacity-05 mt-2" >
+                      <a >by {{post.author}}</a>
+                  </span>
+                  <div class="quote-votes">
+                    <button class="upvote btn btn-outline-success btn-sm float-right ml-2" (click)='voteQuote(post,0)'>Upvote ({{post.upvote}})</button>
+                    <button class="downvote btn btn-outline-danger btn-sm float-right" (click)='voteQuote(post,1)'>Downvote ({{post.downvote}})</button>
+                </div>
+                   </div>
+               
+              
+            </div>
+          </div>
+        </div>
+        <!-- <div class="d-block d-md-flex podcast-entry bg-white mb-5 aos-init aos-animate"
+        *ngFor="let post of posts;let i=index" data-aos="fade-up">
+        <div class="text">
+          <h3 class="font-weight-dark">
+            <a [routerLink]="[post.id]"> {{ post.title }}</a>noOfLikes
+          </h3>
+          <div class="text-white mb-3">
+            <span class="text-black-opacity-05" >
+                <a >by {{post.author}}</a>
+            </span>
+          </div> 
+          <div class="desc">
+            <p>{{post.content |slice:0: 170 }}
+              <a [routerLink]="[post.id]">{{post.content.length > 170 ? '...Read More' : ''}}</a></p>
+          </div>
+  
+ 
+</div>
+
+
+
+
+</div>
+
+
+
+   
+</div>
+
+      </div>
+    </div> 
+  
+  </div>
+ -->
+

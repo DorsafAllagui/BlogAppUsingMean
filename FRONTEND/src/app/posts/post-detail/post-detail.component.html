@@ -1,0 +1,29 @@
+  <div class="container">
+    <div class="row">
+
+        <div class="list-group">
+          
+
+        </div>
+      <div class="col-md-9 main" *ngIf="post">
+        <button class=" btn btn-outline-success btn-sm float-right ml-2" [routerLink]="['../edit',postId]" >
+          Edit Post
+        </button>
+                    <button class=" btn btn-outline-primary btn-sm float-right" (click)='deletePost(post)'>Delete Post</button>
+        <div class="card-body">
+          <h1>{{post.title}}</h1>
+          <div class="text-white mb-3">
+            <span class="text-black-opacity-05" >
+             
+              {{post.author}} 
+            </span>
+          </div>
+
+          
+          
+          <p>{{post.content}}</p>
+        </div>
+
+    </div>
+
+  </div>
